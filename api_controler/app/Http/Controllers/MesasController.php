@@ -37,7 +37,7 @@ class MesasController extends Controller
               'Mesa' => $getIdMesa,
               'Cardapios'=> $getIdMesa->cardapios
            ];
-            return $response;
+            return $getIdMesa;
           }
           return response()->json([
              'message' => 'Algo deu errado :('

@@ -5,8 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class MesaItem extends Model
+class CardapioMesa extends Model
 {
     use HasFactory;
-    protected $fillable = ["mesa_id", "item_id"];
+    protected $table = 'cardapio_mesa';
+    protected $fillable = ["mesas_id", "cardapio_id"];
 }

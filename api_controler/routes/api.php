@@ -3,7 +3,7 @@
 use App\Http\Controllers\Auth\Api\loginController;
 use App\Http\Controllers\CardapioController;
 use App\Http\Controllers\MesasController;
-use App\Http\Controllers\MesaItemController;
+use App\Http\Controllers\CardapioMesaController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -37,5 +37,8 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     //rotas das mesas
     Route::get('/mesa', [MesasController::class, 'index' ] );
     Route::get('/mesa/{id}', [MesasController::class, 'show']);
-    Route::get('/mesaItem', [MesaItemController::class, 'index' ] );
+
+    //rotas tabela pivo
+    Route::get('/cardapioMesa', [CardapioMesaController::class, 'index' ] );
+    Route::post('/cardapioMesa', [CardapioMesaController::class, 'store']);
 });

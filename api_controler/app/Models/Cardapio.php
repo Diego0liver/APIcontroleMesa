@@ -12,6 +12,6 @@ class Cardapio extends Model
     protected $fillable = ["nome", "preco", "descricao"];
 
     public function mesa(){
-        return $this->belongsToMany(Mesas::class, 'mesa_items');
+        return $this->belongsToMany(Mesas::class, 'cardapio_mesa');
     }
 }

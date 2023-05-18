@@ -16,6 +16,6 @@ class Mesas extends Model
 
     public function cardapios(): BelongsToMany
     {
-        return $this->belongsToMany(Cardapio::class, 'mesa_items');
+        return $this->belongsToMany(Cardapio::class, 'cardapio_mesa');
     }
 }

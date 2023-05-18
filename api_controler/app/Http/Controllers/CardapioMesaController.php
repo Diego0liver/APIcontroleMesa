@@ -3,18 +3,18 @@
 namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
-use App\Models\MesaItem;
+use App\Models\CardapioMesa;
 use Illuminate\Http\Request;
 
-class MesaItemController extends Controller
+class CardapioMesaController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $getMesaItem = MesaItem::all();
-        return $getMesaItem;
+       $getPivo = CardapioMesa::all();
+         return $getPivo;
     }
 
     /**
@@ -22,7 +22,15 @@ class MesaItemController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $creatItem = CardapioMesa::create($request->all());
+        if($creatItem){
+            return response()->json([
+                'mensagem'=>'Item adicionado com sucesso'
+            ], 200);
+        }
+        return response()->json([
+             'erro'=>'Erro :c'
+        ],404);
     }
 
     /**
