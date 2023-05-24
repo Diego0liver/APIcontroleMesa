@@ -30,15 +30,26 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
 
     //rotas do cardapio
     Route::get('/cardapio', [CardapioController::class, 'index']);
-    Route::post('/cardapio', [CardapioController::class, 'store']);
-    Route::get('/cardapio/{id}', [CardapioController::class, 'show']);
+    // Route::post('/cardapio', [CardapioController::class, 'store']);
+    // Route::get('/cardapio/{id}', [CardapioController::class, 'show']);
     Route::delete('/cardapio/{id}', [CardapioController::class, 'destroy']);
 
     //rotas das mesas
-    Route::get('/mesa', [MesasController::class, 'index' ] );
-    Route::get('/mesa/{id}', [MesasController::class, 'show']);
+    // Route::get('/mesa', [MesasController::class, 'index' ] );
+    // Route::get('/mesa/{id}', [MesasController::class, 'show']);
 
     //rotas tabela pivo
     Route::get('/cardapioMesa', [CardapioMesaController::class, 'index' ] );
-    Route::post('/cardapioMesa', [CardapioMesaController::class, 'store']);
+
 });
+
+Route::get('/mesa', [MesasController::class, 'index' ] );
+Route::put('/mesa/{id}', [MesasController::class, 'update' ] );
+Route::get('/mesa/{id}', [MesasController::class, 'show']);
+
+Route::post('/cardapio', [CardapioController::class, 'store']);
+Route::get('/cardapio/{id}', [CardapioController::class, 'show']);
+
+Route::get('/cardapio', [CardapioController::class, 'index']);
+
+Route::post('/cardapioMesa', [CardapioMesaController::class, 'store']);

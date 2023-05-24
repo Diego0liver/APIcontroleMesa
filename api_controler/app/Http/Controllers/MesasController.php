@@ -49,7 +49,14 @@ class MesasController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $updateItem = Mesas::find($id);
+        if($updateItem){
+            $updateItem->update($request->all());
+            return $updateItem;
+        }
+        return response()->json([
+                'erro'=>'error :c'
+        ], 404);
     }
 
     /**

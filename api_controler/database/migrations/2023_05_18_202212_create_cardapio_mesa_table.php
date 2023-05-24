@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('cardapio_mesa', function (Blueprint $table) {
             $table->id();
             $table->foreignId('mesas_id')->constrained()->onDelete('CASCADE')->onUpdate('CASCADE');
-            $table->foreignId('cardapio_id')->constrained()->onDelete('CASCADE')->onUpdate('CASCADE');
+            $table->foreignId('cardapio_id')->constrained()->onDelete('CASCADE')->onUpdate('CASCADE')->nullable();
             $table->timestamps();
         });
     }
