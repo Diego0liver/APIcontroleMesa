@@ -15,9 +15,9 @@ class loginController extends Controller
 
         $token = auth()->user()->createToken('controleMesa_token');
         return response()->json([
-            'data'=>[
+
                 'token' => $token->plainTextToken
-            ]
+
             ]);
     }
 

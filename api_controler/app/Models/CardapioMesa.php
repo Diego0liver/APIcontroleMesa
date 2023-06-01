@@ -10,4 +10,5 @@ class CardapioMesa extends Model
     use HasFactory;
     protected $table = 'cardapio_mesa';
     protected $fillable = ["mesas_id", "cardapio_id"];
+
 }

@@ -64,6 +64,6 @@ class MesasController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+
     }
 }
