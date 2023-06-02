@@ -72,8 +72,6 @@ class CardapioMesaController extends Controller
 
 
         public function destroyTotalMesa(string $mesas_id)
-
-
             {
                 try {
                     // Localize o aluno pelo aluno_id
@@ -92,8 +90,6 @@ class CardapioMesaController extends Controller
                     return response()->json(['error' => $e->getMessage()], 500);
                 }
             }
-
-
 }
 
 

@@ -13,7 +13,7 @@ class CardapioController extends Controller
      */
     public function index()
     {
-        $getIntes = Cardapio::all();
+        $getIntes = Cardapio::get();
         return $getIntes;
     }
 
