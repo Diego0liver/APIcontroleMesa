@@ -22,7 +22,8 @@ class MesasController extends Controller
      */
     public function store(Request $request)
     {
-
+        $mesaCreat = Mesas::create($request->all());
+        return $mesaCreat;
     }
 
     /**
@@ -64,6 +65,7 @@ class MesasController extends Controller
      */
     public function destroy(string $id)
     {
-
+        $mesaDelet = Mesas::destroy($id);
+        return $mesaDelet;
     }
 }
