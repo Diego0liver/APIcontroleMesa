@@ -10,14 +10,13 @@ class loginController extends Controller
 {
      public function login(Request $request)
     {
-        $credencial = $request->only('email', 'password');
+        $credencial = $request->only('email', 'password', 'id');
         if(!auth()->attempt($credencial))abort(401, 'nao autorizado') ;
-
         $token = auth()->user()->createToken('controleMesa_token');
+        $id = auth()->user()->id;
         return response()->json([
-
-                'token' => $token->plainTextToken
-
+                'token' => $token->plainTextToken,
+                'id'=> $id
             ]);
     }
 

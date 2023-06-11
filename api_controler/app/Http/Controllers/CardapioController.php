@@ -8,14 +8,7 @@ use Illuminate\Http\Request;
 
 class CardapioController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $getIntes = Cardapio::get();
-        return $getIntes;
-    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -43,5 +36,16 @@ class CardapioController extends Controller
     {
         $produtoDelet = Cardapio::destroy($id);
         return $produtoDelet;
+    }
+
+    public function getIdCardapio($id)
+    {
+        $contacts = Cardapio::where('user_id', $id)->get();
+
+        if ($contacts->isEmpty()) {
+            return response()->json('Usuário não encontrado ou não possui contatos.', 404);
+        }
+
+        return response()->json($contacts);
     }
 }

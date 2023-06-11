@@ -8,14 +8,6 @@ use Illuminate\Http\Request;
 
 class MesasController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
-    public function index()
-    {
-        $getMesas = Mesas::all();
-        return $getMesas;
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -68,4 +60,16 @@ class MesasController extends Controller
         $mesaDelet = Mesas::destroy($id);
         return $mesaDelet;
     }
+
+
+    public function getId($id)
+{
+    $contacts = Mesas::where('user_id', $id)->get();
+
+    if ($contacts->isEmpty()) {
+        return response()->json('Usuário não encontrado ou não possui contatos.', 404);
+    }
+
+    return response()->json($contacts);
+}
 }
