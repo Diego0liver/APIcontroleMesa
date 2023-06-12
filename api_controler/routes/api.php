@@ -7,7 +7,7 @@ use App\Http\Controllers\CardapioMesaController;
 use Illuminate\Support\Facades\Route;
 
 
-
+//rotas de login
 Route::prefix('auth')->group(function () {
     Route::post('/login', [loginController::class, 'login']);
     Route::post('/registro', [loginController::class, 'registro']);
