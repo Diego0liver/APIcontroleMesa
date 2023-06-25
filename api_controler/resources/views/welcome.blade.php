@@ -16,6 +16,6 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1>API de controle de mesa</h1>
+        <h1>API de controle de mesa ok</h1>
     </body>
 </html>

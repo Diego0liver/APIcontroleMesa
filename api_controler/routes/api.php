@@ -37,5 +37,5 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
     });
 });
 
-Route::get('/mesa/{id}', [MesasController::class, 'show']);
+
 
