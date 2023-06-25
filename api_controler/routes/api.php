@@ -20,7 +20,7 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
         Route::get('/{id}/mesa', [MesasController::class, 'getId'])->middleware('auth');
         Route::post('/mesa', [MesasController::class, 'store' ] )->middleware('auth');
         Route::put('/mesa/{id}', [MesasController::class, 'update' ] )->middleware('auth');
-        // Route::get('/mesa/{id}', [MesasController::class, 'show'])->middleware('auth');
+        Route::get('/mesa/{id}', [MesasController::class, 'show'])->middleware('auth');
         Route::delete('/mesa/{id}', [MesasController::class, 'destroy'])->middleware('auth');
 
         //rotas de carpadios
