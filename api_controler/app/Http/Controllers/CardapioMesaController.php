@@ -74,17 +74,16 @@ class CardapioMesaController extends Controller
         public function destroyTotalMesa(string $mesas_id)
             {
                 try {
-                    // Localize o aluno pelo aluno_id
-                    $aluno = Mesas::find($mesas_id);
+                    
+                    $mesaTotal = Mesas::find($mesas_id);
 
-                    if (!$aluno) {
-                        throw new \Exception('Aluno não encontrado.');
+                    if (!$mesaTotal) {
+                        throw new \Exception('Mesa não encontrada.');
                     }
 
-                    // Acesse a relação "notas" definida no modelo Aluno e exclua todas as notas
-                    $aluno->cardapios()->detach();
+                    mesaTotal->cardapios()->detach();
 
-                    return response()->json(['message' => 'Notas excluídas com sucesso.']);
+                    return response()->json(['message' => 'Item da mesa excluídas com sucesso.']);
 
                 } catch (\Exception $e) {
                     return response()->json(['error' => $e->getMessage()], 500);
