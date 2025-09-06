@@ -25,7 +25,7 @@ class MesasController extends Controller
     {
         $getIdMesa = Mesas::find($id);
         if($getIdMesa){
-           //pegando o testamento com os livros pela n:1
+         
            $response = [
               'Mesa' => $getIdMesa,
               'Cardapios'=> $getIdMesa->cardapios

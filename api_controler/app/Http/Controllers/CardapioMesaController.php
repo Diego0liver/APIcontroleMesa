@@ -74,14 +74,14 @@ class CardapioMesaController extends Controller
         public function destroyTotalMesa(string $mesas_id)
             {
                 try {
-                    
+
                     $mesaTotal = Mesas::find($mesas_id);
 
                     if (!$mesaTotal) {
                         throw new \Exception('Mesa não encontrada.');
                     }
 
-                    mesaTotal->cardapios()->detach();
+                    $mesaTotal->cardapios()->detach();
 
                     return response()->json(['message' => 'Item da mesa excluídas com sucesso.']);
 

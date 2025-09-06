@@ -4,8 +4,8 @@ use App\Http\Controllers\Auth\Api\loginController;
 use App\Http\Controllers\CardapioController;
 use App\Http\Controllers\MesasController;
 use App\Http\Controllers\CardapioMesaController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
-
 
 //rotas de login
 Route::prefix('auth')->group(function () {
@@ -34,6 +34,9 @@ Route::group(['middleware' => ['auth:sanctum']], function(){
         Route::delete('/cardapioMesa/{mesas_id}/{cardapio_id}', [CardapioMesaController::class, 'destroy'])->middleware('auth');
         Route::get('/cardapioMesa', [CardapioMesaController::class, 'index' ] )->middleware('auth');
         Route::delete('/cardapioMesaTotal/{mesas_id}', [CardapioMesaController::class, 'destroyTotalMesa'])->middleware('auth');
+
+        //rotas users
+        Route::post('/avatar', [UserController::class, 'uploadAvatar'])->middleware('auth');
     });
 });
 
